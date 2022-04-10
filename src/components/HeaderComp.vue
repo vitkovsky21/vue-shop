@@ -30,8 +30,8 @@
 
     <nav class="navbar">
         <a href="home.html"> <i class="fas fa-angle-right"></i> home </a>
-        <a href="about.html"> <i class="fas fa-angle-right"></i> about </a>
-        <a href="products.html"> <i class="fas fa-angle-right"></i> products </a>
+        <routerLink :to="{ name: 'AboutPage' }"> <i class="fas fa-angle-right"></i> about </routerLink>
+        <routerLink :to="{ name: 'ProductsPage' }"> <i class="fas fa-angle-right"></i> products </routerLink>
         <a href="contact.html"> <i class="fas fa-angle-right"></i> contact </a>
         <a href="login.html"> <i class="fas fa-angle-right"></i> login </a>
         <a href="register.html"> <i class="fas fa-angle-right"></i> register </a>
