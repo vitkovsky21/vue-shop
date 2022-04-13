@@ -29,10 +29,10 @@
     </div>
 
     <nav class="navbar">
-        <a href="home.html"> <i class="fas fa-angle-right"></i> home </a>
-        <routerLink :to="{ name: 'AboutPage' }"> <i class="fas fa-angle-right"></i> about </routerLink>
-        <routerLink :to="{ name: 'ProductsPage' }"> <i class="fas fa-angle-right"></i> products </routerLink>
-        <a href="contact.html"> <i class="fas fa-angle-right"></i> contact </a>
+        <routerLink :to="{ name: 'HomePage' }" @click="deactivateSideBar()"> <i class="fas fa-angle-right"></i> home </routerLink>
+        <routerLink :to="{ name: 'AboutPage' }" @click="deactivateSideBar()"> <i class="fas fa-angle-right"></i> about </routerLink>
+        <routerLink :to="{ name: 'ProductsPage' }" @click="deactivateSideBar()"> <i class="fas fa-angle-right"></i> products </routerLink>
+        <routerLink :to="{ name: 'ContactPage' }" @click="deactivateSideBar()"> <i class="fas fa-angle-right"></i> contact </routerLink>
         <a href="login.html"> <i class="fas fa-angle-right"></i> login </a>
         <a href="register.html"> <i class="fas fa-angle-right"></i> register </a>
         <a href="cart.html"> <i class="fas fa-angle-right"></i> cart </a>

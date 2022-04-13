@@ -4,10 +4,10 @@
     <a href="home.html" class="logo"> <i class="fas fa-store"></i> shopie </a>
 
     <div class="links">
-        <a href="home.html"> home </a>
-        <a href="about.html"> about </a>
-        <a href="products.html"> products </a>
-        <a href="contact.html"> contact </a>
+        <routerLink :to="{ name: 'HomePage' }"> home </routerLink>
+        <routerLink :to="{ name: 'AboutPage' }"> about </routerLink>
+        <routerLink :to="{ name: 'ProductsPage' }"> products </routerLink>
+        <routerLink :to="{ name: 'ContactPage' }"> contact </routerLink>
         <a href="login.html"> login </a>
         <a href="register.html"> register </a>
         <a href="cart.html"> cart </a>
@@ -25,7 +25,7 @@
 
     <p> all rights reserved! </p>
 
-    <img src="images/card_img.png" alt="">
+    <img src="@/assets/card_img.png" alt="">
 
 </section>
 </template>

@@ -5,37 +5,32 @@
 
     <div class="box-container">
 
-        <a href="#" class="box">
+        <a href="#" @click="sortByCategories(categories[1])" class="box">
             <img src="@/assets/cat_img1.png" alt="">
             <h3>televisions</h3>
         </a>
 
-        <a href="#" class="box">
+        <a href="#" @click="sortByCategories(categories[2])" class="box">
             <img src="@/assets/cat_img2.png" alt="">
             <h3>smartphones</h3>
         </a>
 
-        <a href="#" class="box">
+        <a href="#" @click="sortByCategories(categories[3])" class="box">
             <img src="@/assets/cat_img3.png" alt="">
             <h3>headphones</h3>
         </a>
 
-        <a href="#" class="box">
+        <a href="#" @click="sortByCategories(categories[4])" class="box">
             <img src="@/assets/cat_img4.png" alt="">
             <h3>smartwatches</h3>
         </a>
 
-        <a href="#" class="box">
-            <img src="@/assets/cat_img5.png" alt="">
-            <h3>games</h3>
-        </a>
-
-        <a href="#" class="box">
+        <a href="#" @click="sortByCategories(categories[5])" class="box">
             <img src="@/assets/cat_img6.png" alt="">
             <h3>camera</h3>
         </a>
 
-        <a href="#" class="box">
+        <a href="#" @click="sortByCategories(categories[6])" class="box">
             <img src="@/assets/cat_img7.png" alt="">
             <h3>speakers</h3>
         </a>
@@ -48,12 +43,12 @@
 
     <h1 class="heading"> featured <span>products</span> </h1>
 
-    <div class="box-container">
+    <div class="box-container" >
 
-        <div class="box">
+        <div class="box" v-for="product in featuredProducts" :key="product.id">
             <div class="image">
-                <img src="images/product-1.jpg" class="main-img" alt="">
-                <img src="images/product-1-hover.jpg" class="hover-img" alt="">
+                <img :src="product.image" class="main-img" alt="">
+                <img :src="product.hoverImage" class="hover-img" alt="">
                 <div class="icons">
                     <a href="#" class="fas fa-shopping-cart"></a>
                     <a href="#" class="fas fa-search-plus"></a>
@@ -62,200 +57,8 @@
                 </div>
             </div>
             <div class="content">
-                <h3>smartphone</h3>
-                <div class="price">$249.99 <span>$399.99</span></div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="images/product-2.jpg" class="main-img" alt="">
-                <img src="images/product-2-hover.jpg" class="hover-img" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-search-plus"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>camera</h3>
-                <div class="price">$249.99 <span>$399.99</span></div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="images/product-3.jpg" class="main-img" alt="">
-                <img src="images/product-3-hover.jpg" class="hover-img" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-search-plus"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>television</h3>
-                <div class="price">$249.99 <span>$399.99</span></div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="images/product-4.jpg" class="main-img" alt="">
-                <img src="images/product-4-hover.jpg" class="hover-img" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-search-plus"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>speaker</h3>
-                <div class="price">$249.99 <span>$399.99</span></div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="images/product-5.jpg" class="main-img" alt="">
-                <img src="images/product-5-hover.jpg" class="hover-img" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-search-plus"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>speaker</h3>
-                <div class="price">$249.99 <span>$399.99</span></div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="images/product-6.jpg" class="main-img" alt="">
-                <img src="images/product-6-hover.jpg" class="hover-img" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-search-plus"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>smartwatch</h3>
-                <div class="price">$249.99 <span>$399.99</span></div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="images/product-7.jpg" class="main-img" alt="">
-                <img src="images/product-7-hover.jpg" class="hover-img" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-search-plus"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>headphone</h3>
-                <div class="price">$249.99 <span>$399.99</span></div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="images/product-8.jpg" class="main-img" alt="">
-                <img src="images/product-8-hover.jpg" class="hover-img" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-search-plus"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>smartphone</h3>
-                <div class="price">$249.99 <span>$399.99</span></div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="images/product-9.jpg" class="main-img" alt="">
-                <img src="images/product-9-hover.jpg" class="hover-img" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-search-plus"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>camera</h3>
-                <div class="price">$249.99 <span>$399.99</span></div>
+                <h3>{{ product.name }}</h3>
+                <div class="price">{{ product.price }} <span>$399.99</span></div>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -269,9 +72,148 @@
     </div>
 
 </section>
+
+<section class="product-banner">
+
+    <h1 class="heading"> <span>deal</span> of the day </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="@/assets/product-banner-1.jpg" alt="">
+            <div class="content">
+                <span>special offer</span>
+                <h3>upto 50% off</h3>
+                <a href="#" class="btn">shop now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="@/assets/product-banner-2.jpg" alt="">
+            <div class="content">
+                <span>special offer</span>
+                <h3>upto 50% off</h3>
+                <a href="#" class="btn">shop now</a>
+            </div>
+        </div>
+
+    </div>
+    
+</section>
 </template>
 
 <script>
+export default {
+    data() {
+        return {
+            products: [
+                {
+                    id: 1,
+                    name: "smartphone",
+                    image: require('@/assets/product-1.jpg'),
+                    hoverImage: require('@/assets/product-1-hover.jpg'),
+                    price: "$249.99",
+                    category: "smartphones"
+                },
+                {
+                    id: 2,
+                    name: "camera",
+                    image: require('@/assets/product-2.jpg'),
+                    hoverImage: require('@/assets/product-2-hover.jpg'),
+                    price: "$249.99",
+                    category: "camera"
+                },
+                {
+                    id: 3,
+                    name: "television",
+                    image: require('@/assets/product-3.jpg'),
+                    hoverImage: require('@/assets/product-3-hover.jpg'),
+                    price: "$249.99",
+                    category: "television"
+                },
+                {
+                    id: 4,
+                    name: "speakers",
+                    image: require('@/assets/product-4.jpg'),
+                    hoverImage: require('@/assets/product-4-hover.jpg'),
+                    price: "$249.99",
+                    category: "speakers"
+                },
+                {
+                    id: 5,
+                    name: "speakers",
+                    image: require('@/assets/product-5.jpg'),
+                    hoverImage: require('@/assets/product-5-hover.jpg'),
+                    price: "$249.99",
+                    category: "speakers"
+                },
+                {
+                    id: 6,
+                    name: "smartwatches",
+                    image: require('@/assets/product-6.jpg'),
+                    hoverImage: require('@/assets/product-6-hover.jpg'),
+                    price: "$249.99",
+                    category: "smartwatches"
+                },
+                {
+                    id: 7,
+                    name: "headphones",
+                    image: require('@/assets/product-7.jpg'),
+                    hoverImage: require('@/assets/product-7-hover.jpg'),
+                    price: "$249.99",
+                    category: "headphones"
+                },
+                {
+                    id: 8,
+                    name: "smartphone",
+                    image: require('@/assets/product-8.jpg'),
+                    hoverImage: require('@/assets/product-8-hover.jpg'),
+                    price: "$249.99",
+                    category: "smartphones"
+                },
+                {
+                    id: 9,
+                    name: "camera",
+                    image: require('@/assets/product-9.jpg'),
+                    hoverImage: require('@/assets/product-9-hover.jpg'),
+                    price: "$249.99",
+                    category: "camera"
+                },
+            ],
+            categories: [
+              { name: "all", value: "0" },
+              { name: "television", value: "1" },
+              { name: "smartphones", value: "2" },
+              { name: "headphones", value: "3" },
+              { name: "smartwatches", value: "4" },
+              { name: "camera", value: "6" },
+              { name: "speakers", value: "7" },
+            ],
+            selected: "all",
+            sortedProducts: []
+        }
+    },
+    methods: {
+      sortByCategories(category) {
+        this.sortedProducts = [];
+        let vm = this;
+        this.products.map(function(item) {
+          if (item.category == category.name) {
+            vm.sortedProducts.push(item);
+          }
+        })
+      }
+    },
+    computed:{
+      featuredProducts() {
+        if (this.sortedProducts.length) {
+          return this.sortedProducts;
+        } else {
+          return this.products;
+        }
+      }
+    }
+}
 </script>
 
 <style scoped>
@@ -402,5 +344,58 @@
 .products .box-container .box .content .stars i {
   font-size: 1.7rem;
   color: gold;
+}
+
+.product-banner .box-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.product-banner .box-container .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 42rem;
+          flex: 1 1 42rem;
+  position: relative;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  border-radius: .5rem;
+  border: 0.2rem solid #333;
+  overflow: hidden;
+  height: 30rem;
+}
+
+.product-banner .box-container .box:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.product-banner .box-container .box img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.product-banner .box-container .box .content {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.product-banner .box-container .box .content span {
+  font-size: 1.7rem;
+  color: #0984e3;
+}
+
+.product-banner .box-container .box .content h3 {
+  padding-top: .5rem;
+  font-size: 2rem;
+  color: #333;
 }
 </style>
