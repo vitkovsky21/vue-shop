@@ -103,8 +103,6 @@
 </template>
 
 <script>
-import SearchService from "../services/SearchService.js"
-
 export default {
     data() {
         return {
@@ -193,13 +191,14 @@ export default {
             ],
             selected: "all",
             sortedProducts: [],
+            letters: ''
         }
   },
     methods: {
       sortByCategories(category) {
         this.$router.push({ name: 'ProductsPage' })
 
-        SearchService.search = '';
+        this.letters = '';
         this.sortedProducts = [];
 
         let vm = this;
@@ -208,19 +207,32 @@ export default {
             vm.sortedProducts.push(item);
           }
         })
+      },
+      fillLetters() {
+        this.$store.state.letters = '';
       }
     },
     computed: {
       featuredProducts() {
-        console.log('1')
+        
         let vm = this;
-        if (SearchService.search.length !== 0) {
+        vm.letters = vm.$store.state.letters;
+        
+        // make state.letter empty
+        this.fillLetters()
+        
+        // reload component
+        this.$store.dispatch('updateLetters')
+
+        if (vm.letters.length !== 0) {
           vm.sortedProducts.push(this.categories[0])
-          return this.products.filter(product => product.name.includes(SearchService.search))
+          return this.products.filter(product => product.name.includes(vm.letters))
         }
+
         else if (this.sortedProducts.length) {
           return vm.sortedProducts;
         }
+
         else {
           vm.sortedProducts.push(this.categories[0])
           return vm.products;

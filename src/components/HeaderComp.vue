@@ -44,7 +44,6 @@
 </template>
 
 <script>
-import SearchService from "../services/SearchService.js"
 
 export default {
   name: 'HeaderComp',
@@ -69,9 +68,9 @@ export default {
       this.searchFormIsActive = false;
     },
     searchProduct() {
-      this.$router.push({ name: 'ProductsPage', query: { name: this.searchBar }})
-      SearchService.searchProducts(this.searchBar);
-      this.searchBar = '';      
+      this.$store.state.letters += this.searchBar;
+      this.searchBar = ''      
+      this.$router.replace({ name: 'ProductsPage', query: { name: this.$store.state.letters }})
     }
   }
 }
