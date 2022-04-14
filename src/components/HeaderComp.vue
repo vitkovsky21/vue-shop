@@ -3,10 +3,10 @@
 
     <routerLink :to="{ name: 'HomePage' }" class="logo"> <i class="fas fa-store"></i> shopie </routerLink>
 
-    <form action="" class="search-form" :class="{ active: searchFormIsActive }">
-        <input type="search" id="search-box" placeholder="search here...">
-        <label for="search-box" class="fas fa-search"></label>
-    </form>
+    <div class="search-form" :class="{ active: searchFormIsActive }">
+        <input type="search" id="search-box" placeholder="search here..." v-model='searchBar' @keypress.enter="searchProduct()">
+        <label for="search-box" class="fas fa-search" @click="searchProduct()"></label>
+    </div>
 
     <div class="icons">
         <div id="menu-btn" class="fas fa-bars" @click="activateSideBar()"></div>
@@ -44,12 +44,15 @@
 </template>
 
 <script>
+import SearchService from "../services/SearchService.js"
+
 export default {
   name: 'HeaderComp',
   data() {
     return {
       sideBarIsActive: false,
-      searchFormIsActive: false
+      searchFormIsActive: false,
+      searchBar: '',
     }
   },
   methods: {
@@ -64,6 +67,11 @@ export default {
     },
     deactivateSearchForm() {
       this.searchFormIsActive = false;
+    },
+    searchProduct() {
+      this.$router.push({ name: 'ProductsPage', query: { name: this.searchBar }})
+      SearchService.searchProducts(this.searchBar);
+      this.searchBar = '';      
     }
   }
 }

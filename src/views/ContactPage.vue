@@ -59,7 +59,7 @@
           @click="sendForm()">
     </form>
 
-    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15076.89592087332!2d72.8319697277345!3d19.14167056419224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1638365961619!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15106.031865121351!2d34.39844713955078!3d61.75334999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46a1ed3f01db7f07%3A0x3d9d7bb0a1cf521e!2z0J_QtdGC0YDQvtC30LDQstC-0LTRgdC6INCa0LDRgNC10LvQuNGP!5e0!3m2!1sru!2sru!4v1649863551027!5m2!1sru!2sru" allowfullscreen="" loading="lazy"></iframe>
 
 </section>
 </template>

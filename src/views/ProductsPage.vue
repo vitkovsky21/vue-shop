@@ -41,11 +41,11 @@
 
 <section class="products">
 
-    <h1 class="heading"> featured <span>products</span> </h1>
+    <h1 class="heading" > featured <span>products</span> </h1>
 
-    <div class="box-container" >
+    <div class="box-container">
 
-        <div class="box" v-for="product in featuredProducts" :key="product.id">
+        <div class="box"  v-for="product in featuredProducts" :key="product.id">
             <div class="image">
                 <img :src="product.image" class="main-img" alt="">
                 <img :src="product.hoverImage" class="hover-img" alt="">
@@ -103,6 +103,8 @@
 </template>
 
 <script>
+import SearchService from "../services/SearchService.js"
+
 export default {
     data() {
         return {
@@ -190,12 +192,16 @@ export default {
               { name: "speakers", value: "7" },
             ],
             selected: "all",
-            sortedProducts: []
+            sortedProducts: [],
         }
-    },
+  },
     methods: {
       sortByCategories(category) {
+        this.$router.push({ name: 'ProductsPage' })
+
+        SearchService.search = '';
         this.sortedProducts = [];
+
         let vm = this;
         this.products.map(function(item) {
           if (item.category == category.name) {
@@ -204,12 +210,20 @@ export default {
         })
       }
     },
-    computed:{
+    computed: {
       featuredProducts() {
-        if (this.sortedProducts.length) {
-          return this.sortedProducts;
-        } else {
-          return this.products;
+        console.log('1')
+        let vm = this;
+        if (SearchService.search.length !== 0) {
+          vm.sortedProducts.push(this.categories[0])
+          return this.products.filter(product => product.name.includes(SearchService.search))
+        }
+        else if (this.sortedProducts.length) {
+          return vm.sortedProducts;
+        }
+        else {
+          vm.sortedProducts.push(this.categories[0])
+          return vm.products;
         }
       }
     }
